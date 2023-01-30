@@ -52,10 +52,11 @@ public:
     {
         fd = ::open(dev_name.c_str(), O_WRONLY);
         if (fd == -1) {
-            printf("could not open(2) %s: %s",
-                        dev_name, strerror(errno));
+            printf("could not open(2) %s: %s\n",
+                        dev_name.c_str(), strerror(errno));
             return false;
         }
+        printf("%s open success\n",dev_name.c_str());
         return true;
     }
 
